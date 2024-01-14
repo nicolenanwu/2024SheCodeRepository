@@ -16,10 +16,10 @@ function search(event) {
   let city = searchInputElement.value;
   let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
 
-  axios.get(apiURL).then(currentTemp);
   cityElement.innerHTML = city;
   console.log(city);
   console.log(apiURL);
+  axios.get(apiURL).then(currentTemp);
 }
 
 function formatDate(date) {
