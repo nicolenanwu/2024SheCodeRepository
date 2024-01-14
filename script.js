@@ -2,24 +2,23 @@ function currentTemp(response) {
   console.log(response.data);
   let temperature = response.data.temperature.current;
   let pageTemp = document.querySelector("#current-temperature-value");
-  console.log(pageTemp);
   pageTemp.innerHTML = temperature;
-  console.log(temperature);
+}
+
+function searchCity(city) {
+  let apiKey = "33d9b4tf90ef10d3o4b9f0f54d6a01b5";
+  let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
+  axios.get(apiURL).then(currentTemp);
+  let cityElement = document.querySelector("#current-city");
+  cityElement.innerHTML = city;
 }
 
 function search(event) {
   event.preventDefault();
   let searchInputElement = document.querySelector("#search-input");
-  let cityElement = document.querySelector("#current-city");
-
-  let apiKey = "33d9b4tf90ef10d3o4b9f0f54d6a01b5";
   let city = searchInputElement.value;
-  let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
 
-  cityElement.innerHTML = city;
-  console.log(city);
-  console.log(apiURL);
-  axios.get(apiURL).then(currentTemp);
+  searchCity(city);
 }
 
 function formatDate(date) {
@@ -49,7 +48,7 @@ function formatDate(date) {
   return `${formattedDay} ${hours}:${minutes}`;
 }
 
-currentTemp("Beijing");
+searchCity("Beijing");
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
