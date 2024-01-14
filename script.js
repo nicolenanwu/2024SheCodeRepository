@@ -49,7 +49,6 @@ function formatDate(date) {
   return `${formattedDay} ${hours}:${minutes}`;
 }
 
-search("Beijing");
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
