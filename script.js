@@ -1,11 +1,17 @@
 function currentTemp(response) {
   console.log(response.data);
   let temperature = response.data.temperature.current;
+  let humidity = response.data.temperature.humidity;
+  let wind = response.data.wind.speed;
   let condition = response.data.condition.description;
   let pageTemp = document.querySelector("#current-temperature-value");
   let pageCondition = document.querySelector("#current-condition");
+  let pageHumidity = document.querySelector("#humidity");
+  let pageWind = document.querySelector("#wind");
   pageCondition.innerHTML = condition;
+  pageHumidity.innerHTML = `${humidity}%`;
   pageTemp.innerHTML = temperature;
+  pageWind.innerHTML = `${wind}km/h`;
 }
 
 function searchCity(city) {
