@@ -1,7 +1,10 @@
 function currentTemp(response) {
   console.log(response.data);
   let temperature = response.data.temperature.current;
+  let condition = response.data.condition.description;
   let pageTemp = document.querySelector("#current-temperature-value");
+  let pageCondition = document.querySelector("#current-condition");
+  pageCondition.innerHTML = condition;
   pageTemp.innerHTML = temperature;
 }
 
