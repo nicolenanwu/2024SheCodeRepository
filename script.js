@@ -12,7 +12,7 @@ function search(event) {
   let searchInputElement = document.querySelector("#search-input");
   let cityElement = document.querySelector("#current-city");
 
-  let apiKey = "7059cb165caa3316bff682d263a01b1e";
+  let apiKey = "33d9b4tf90ef10d3o4b9f0f54d6a01b5";
   let city = searchInputElement.value;
   let apiURL = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}`;
 
