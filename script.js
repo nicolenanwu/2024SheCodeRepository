@@ -4,14 +4,17 @@ function currentTemp(response) {
   let humidity = response.data.temperature.humidity;
   let wind = response.data.wind.speed;
   let condition = response.data.condition.description;
+  let icon = `<img src="${response.data.condition.icon_url}" class="weather-app-icon" />`;
   let pageTemp = document.querySelector("#current-temperature-value");
   let pageCondition = document.querySelector("#current-condition");
   let pageHumidity = document.querySelector("#humidity");
   let pageWind = document.querySelector("#wind");
+  let pageIcon = document.querySelector("#current-temperature-icon");
   pageCondition.innerHTML = condition;
   pageHumidity.innerHTML = `${humidity}%`;
   pageTemp.innerHTML = temperature;
   pageWind.innerHTML = `${wind}km/h`;
+  pageIcon.innerHTML = icon;
 }
 
 function searchCity(city) {
