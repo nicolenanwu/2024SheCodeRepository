@@ -19,6 +19,7 @@ function search(event) {
   axios.get(apiURL).then(currentTemp);
   cityElement.innerHTML = city;
   console.log(city);
+  console.log(apiURL);
 }
 
 function formatDate(date) {
